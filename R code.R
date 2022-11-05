@@ -1,7 +1,10 @@
-trials=10000
+library(svDialogs)
+trials<-dlgInput("Enter the number of trials ")$res
+trials<-as.numeric(trials)
 # number of simulations
-avg=80
-# mean of distribution
+avg<-dlgInput("Enter the sample mean for dissolution ")$res
+avg<-as.numeric(avg)
+# sample mean of dissolution, used to generated simulated distribution data
 stdev=c(1:10)
 # range of standard deviation values
 cnt=0
@@ -26,7 +29,7 @@ for (x in min(stdev):max(stdev)){
   for (j1 in 1:trials){
     k<-round(c(rnorm(24,avg,x)),digits = 2)
     # simulate data using mean and standard deviation and 
-     # round it to 2 digits
+    # round it to 2 digits
     d<-cbind(d,t(t(k)))
   }
   write.table(rbind(paste0("Trial# ",c(1:trials)),d),
@@ -71,7 +74,7 @@ for (x in min(stdev):max(stdev)){
         }
         if (mean(d[1:12,j])>=Q){
           # checking if average of first 12 in d are greater than or equal
-            # to Q
+          # to Q
           m=1
           cnt=cnt*m
           if (cnt==12){
