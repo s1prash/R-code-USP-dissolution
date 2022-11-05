@@ -6,4 +6,5 @@ The repository contains the following files (a) stdev_*.csv : Simulated raw data
 (c) Fail trials.csv : List all the trials which fail to meet acceptance criteria at all standard deviations
 (d) Final.csv : List of meeting acceptance criteria probability at all stages
 (e) Std dev *.pdf : Plot of cumulative probabilities as function of trial count (* different standard deviation values).  
-Users can request support by opening an issue on GitHub
+svDialogs package in R is required for functioning of this code.  
+Users can request support by opening an issue on GitHub.
